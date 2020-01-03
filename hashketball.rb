@@ -189,15 +189,31 @@ end
   
 def big_shoe_rebounds
   big_shoe = 0
-  rebs = 0
+  rebounds = 0
 
   game_hash.each do |key, value|
     value[:players].each do |player|
       if player[:shoe] > big_shoe
         big_shoe = player[:shoe]
-        rebs = player[:rebounds]
+        rebounds = player[:rebounds]
       end
     end
   end
-  rebs
+  rebounds
 end
+
+def most_points_scored
+    max = nil
+    player_max_points = nil
+    game_hash.each do |visitation_status,team_stats|
+        team_stats[:players].each do |player|
+            if max == nil || player[:points] > max
+                max = player[:points]
+                player_max_points = player[:player_name]
+            end
+        end
+    end
+    player_max_points
+end
+
+
