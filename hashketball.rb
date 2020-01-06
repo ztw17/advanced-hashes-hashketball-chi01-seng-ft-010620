@@ -116,6 +116,13 @@ def num_points_scored(players_name)
   end
 end
 
+# def num_points_scored(player_name)
+#   game_hash.values.map do |team|
+#     team[:players]
+#   end
+#   nested_players.flatten
+# end
+
 def shoe_size(players_name)
    game_hash.each do |place, team|
     team.each do |attribute, data|
